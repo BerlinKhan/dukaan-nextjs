@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "../_components/PageHeader";
 import Link from "next/link";
-import { Payment, columns } from "./columns";
-import { DataTable } from "./data-table";
+import { Payment, columns } from "./_components/columns";
+import { DataTable } from "./_components/data-table";
 
 // async function getData(): Promise<Payment[]> {
 //   // Fetch data from your API here.
