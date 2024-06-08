@@ -109,24 +109,24 @@ export async function addProduct( prevState: unknown, formData: FormData) {
 //   redirect("/admin/products")
 // }
 
-// export async function toggleProductAvailability(
-//   id: string,
-//   isAvailabeForPurchase: boolean
-// ) {
-//   await db.product.update({ where: { id }, data: { isAvailabeForPurchase } })
+export async function toggleProductAvailability(
+  id: string,
+  isAvailabeForPurchase: boolean
+) {
+  await db.product.update({ where: { id }, data: { isAvailabeForPurchase } })
 
-//   revalidatePath("/")
-//   revalidatePath("/products")
-// }
+  // revalidatePath("/")
+  // revalidatePath("/products")
+}
 
-// export async function deleteProduct(id: string) {
-//   const product = await db.product.delete({ where: { id } })
+export async function deleteProduct(id: string) {
+  const product = await db.product.delete({ where: { id } })
 
-//   if (product == null) return notFound()
+  if (product == null) return notFound()
 
-//   await fs.unlink(product.filePath)
-//   await fs.unlink(`public${product.imagePath}`)
+  await fs.unlink(product.filePath)
+  await fs.unlink(`public${product.imagePath}`)
 
-//   revalidatePath("/")
-//   revalidatePath("/products")
-// }
+  // revalidatePath("/")
+  // revalidatePath("/products")
+}
