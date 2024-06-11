@@ -103,8 +103,8 @@ export async function updateProduct(
     },
   })
 
-  // revalidatePath("/")
-  // revalidatePath("/products")
+  revalidatePath("/")
+  revalidatePath("/products")
 
   redirect("/admin/products")
 }
@@ -115,8 +115,8 @@ export async function toggleProductAvailability(
 ) {
   await db.product.update({ where: { id }, data: { isAvailabeForPurchase } })
 
-  // revalidatePath("/")
-  // revalidatePath("/products")
+  revalidatePath("/")
+  revalidatePath("/products")
 }
 
 export async function deleteProduct(id: string) {
@@ -127,6 +127,6 @@ export async function deleteProduct(id: string) {
   await fs.unlink(product.filePath)
   await fs.unlink(`public${product.imagePath}`)
 
-  // revalidatePath("/")
-  // revalidatePath("/products")
+  revalidatePath("/")
+  revalidatePath("/products")
 }
